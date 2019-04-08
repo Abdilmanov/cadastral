@@ -18,4 +18,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/getInfo', 'KadastrController@all');
-Route::get('/getValue/{cadastral_no}', 'KadastrController@getValue')->middleware('cors');
+Route::get('/getValue', 'KadastrController@getValue');
+Route::get('/getValueFromLog/{cadastral_no}', 'KadastrController@getValueFromLog');
+Route::get('/getValueFromBuilding/{cadastral_no}', 'KadastrController@getValueFromBuilding');
+Route::post('/insert', 'KadastrController@insert');
